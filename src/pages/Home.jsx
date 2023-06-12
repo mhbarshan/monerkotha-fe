@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts${cat}`);
+        const res = await axios.get(`https://monerkotha-api1.onrender.com/posts${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -61,12 +61,12 @@ export default function Home() {
               <img src={`../upload/${post.image}`} alt="" />
             </div>
             <div className="content">
-              <Link to={`/post/${post.id}`} className="link">
+              <Link to={`https://monerkotha-api1.onrender.com/post/${post.id}`} className="link">
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.heading)}</p>
               <button>
-                <Link to={`/post/${post.id}`} className="link">
+                <Link to={`https://monerkotha-api1.onrender.com/post/${post.id}`} className="link">
                   Read more...
                 </Link>
               </button>
