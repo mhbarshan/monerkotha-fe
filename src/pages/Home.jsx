@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://monerkotha-api1.onrender.com/posts${cat}`);
+        const res = await axios.get(`https://monerkotha-be.onrender.com/posts${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);
