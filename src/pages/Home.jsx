@@ -61,12 +61,12 @@ export default function Home() {
               <img src={`../upload/${post.image}`} alt="" />
             </div>
             <div className="content">
-              <Link to={`https://monerkotha-api1.onrender.com/post/${post.id}`} className="link">
+              <Link to={`https://monerkotha-be.onrender.com/post/${post.id}`} className="link">
                 <h1>{post.title}</h1>
               </Link>
               <p>{getText(post.heading)}</p>
               <button>
-                <Link to={`https://monerkotha-api1.onrender.com/post/${post.id}`} className="link">
+                <Link to={`https://monerkotha-be.onrender.com/post/${post.id}`} className="link">
                   Read more...
                 </Link>
               </button>
