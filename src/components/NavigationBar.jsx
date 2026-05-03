@@ -66,7 +66,7 @@ export default function NavigationBar() {
 
             <Nav.Link>
               <span>
-                <h6>{currentUser?.username.toUpperCase()}</h6>
+                <h6>{currentUser?.username?.toUpperCase()}</h6>
               </span>{" "}
             </Nav.Link>
             <Nav.Link>
