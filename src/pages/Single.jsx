@@ -7,9 +7,7 @@ import Menu from "../components/Menu";
 import { AuthContext } from "../context/authContext";
 import Delete from "../images/delete.png";
 import Edit from "../images/edit.png";
-import dotenv from "dotenv"
 
-dotenv.config()
 export default function Single() {
   const [post, setPost] = useState({});
 
