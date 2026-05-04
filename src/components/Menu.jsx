@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 export default function Menu({ cat }) {
   const [posts, setPosts] = useState([]);
 
@@ -10,7 +11,7 @@ export default function Menu({ cat }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/?cat=${cat}`);
+        const res = await axios.get(`${process.env.baseUrl}/posts/?cat=${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);

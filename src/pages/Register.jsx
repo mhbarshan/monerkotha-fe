@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import dotenv from "dotenv"
 
-dotenv.config()
 export default function Register() {
   // const [inputs, setInputs] = useState({
   //   username: "",

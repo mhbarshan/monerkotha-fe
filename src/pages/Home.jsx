@@ -1,9 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import dotenv from "dotenv"
-
-dotenv.config()
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
