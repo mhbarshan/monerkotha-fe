@@ -54,7 +54,7 @@ export default function Menu({ cat }) {
           <img src={`../upload/${post.image}`} alt="" />
           <h2>{post.title}</h2>
           <button>
-            <Link to={`${process.env.REACT_APP_BASE_URL}/post/${post.id}`} className="link">
+            <Link to={`${process.env.REACT_APP_BASE_URL}/posts/${post.id}`} className="link">
               Read more...
             </Link>
           </button>
