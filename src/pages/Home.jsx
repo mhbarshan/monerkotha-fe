@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${process.env.baseUrl}/posts${cat}`);
+        const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);

@@ -34,7 +34,7 @@ export default function Register() {
     const imageUrl = await upload();
     try {
       // await axios.post("/auth/register", inputs);
-      await axios.post(`${process.env.baseUrl}/auth/register`, {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/register`, {
         email,
         username,
         image: file ? imageUrl : "",

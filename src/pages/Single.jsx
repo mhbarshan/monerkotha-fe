@@ -24,7 +24,7 @@ export default function Single() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${process.env.baseUrl}/posts/${postID}`);
+        const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/${postID}`);
         setPost(res.data);
       } catch (err) {
         console.log(err);
@@ -35,7 +35,7 @@ export default function Single() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${process.env.baseUrl}/posts/${postID}`);
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/posts/${postID}`);
       navigate("/");
     } catch (err) {
       console.log(err);

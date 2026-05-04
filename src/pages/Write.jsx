@@ -31,14 +31,14 @@ export default function Write() {
     const imageUrl = await upload();
     try {
       state
-        ? await axios.put(`${process.env.baseUrl}/posts/${state.id}`, {
+        ? await axios.put(`${process.env.REACT_APP_BASE_URL}/posts/${state.id}`, {
             title,
             heading,
             description: value,
             cat,
             image: file ? imageUrl : "",
           })
-        : await axios.post(`${process.env.baseUrl}/posts/`, {
+        : await axios.post(`${process.env.REACT_APP_BASE_URL}/posts/`, {
             title,
             heading,
             description: value,

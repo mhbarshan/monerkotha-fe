@@ -11,7 +11,7 @@ export default function Menu({ cat }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`${process.env.baseUrl}/posts/?cat=${cat}`);
+        const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/posts/?cat=${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -54,7 +54,7 @@ export default function Menu({ cat }) {
           <img src={`../upload/${post.image}`} alt="" />
           <h2>{post.title}</h2>
           <button>
-            <Link to={`${process.env.baseUrl}/post/${post.id}`} className="link">
+            <Link to={`${process.env.REACT_APP_BASE_URL}/post/${post.id}`} className="link">
               Read more...
             </Link>
           </button>
