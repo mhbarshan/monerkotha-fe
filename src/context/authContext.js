@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useState } from "react";
+import dotenv from "dotenv"
 
+dotenv.config()
 export const AuthContext = createContext();
 export function useAuth() {
   return useContext(AuthContext);
@@ -12,12 +14,12 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post("/auth/login", inputs);
-    setCurrentUser(res.data);
+    const res = await axios.post(`${process.env.baseUrl}/auth/login`, inputs);
+   if(res)  setCurrentUser(res.data);
   };
 
   const logout = async (inputs) => {
-    await axios.post("/auth/logout");
+    await axios.post(`${process.env.baseUrl}/auth/logout`);
     setCurrentUser(null);
   };
 

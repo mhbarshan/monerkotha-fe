@@ -53,7 +53,7 @@ export default function Menu({ cat }) {
           <img src={`../upload/${post.image}`} alt="" />
           <h2>{post.title}</h2>
           <button>
-            <Link to={`/post/${post.id}`} className="link">
+            <Link to={`${process.env.baseUrl}/post/${post.id}`} className="link">
               Read more...
             </Link>
           </button>

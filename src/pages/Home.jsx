@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -11,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://monerkotha-be.onrender.com/api/posts${cat}`);
+        const res = await axios.get(`${process.env.baseUrl}/posts${cat}`);
         setPosts(res.data);
       } catch (err) {
         console.log(err);

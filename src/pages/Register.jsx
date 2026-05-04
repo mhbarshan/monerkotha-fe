@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import dotenv from "dotenv"
+
+dotenv.config()
 export default function Register() {
   // const [inputs, setInputs] = useState({
   //   username: "",
@@ -33,7 +36,7 @@ export default function Register() {
     const imageUrl = await upload();
     try {
       // await axios.post("/auth/register", inputs);
-      await axios.post(`/auth/register`, {
+      await axios.post(`${process.env.baseUrl}/auth/register`, {
         email,
         username,
         image: file ? imageUrl : "",

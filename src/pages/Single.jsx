@@ -7,7 +7,9 @@ import Menu from "../components/Menu";
 import { AuthContext } from "../context/authContext";
 import Delete from "../images/delete.png";
 import Edit from "../images/edit.png";
+import dotenv from "dotenv"
 
+dotenv.config()
 export default function Single() {
   const [post, setPost] = useState({});
 
@@ -24,7 +26,7 @@ export default function Single() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/posts/${postID}`);
+        const res = await axios.get(`${process.env.baseUrl}/posts/${postID}`);
         setPost(res.data);
       } catch (err) {
         console.log(err);
@@ -35,7 +37,7 @@ export default function Single() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${postID}`);
+      await axios.delete(`${process.env.baseUrl}/posts/${postID}`);
       navigate("/");
     } catch (err) {
       console.log(err);
