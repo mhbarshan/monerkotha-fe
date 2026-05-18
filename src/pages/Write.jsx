@@ -37,7 +37,9 @@ export default function Write() {
             description: value,
             cat,
             image: file ? imageUrl : "",
-          })
+          }, {
+    withCredentials: true,
+  })
         : await axios.post(`${process.env.REACT_APP_BASE_URL}/posts/`, {
             title,
             heading,
@@ -45,7 +47,9 @@ export default function Write() {
             cat,
             image: file ? imageUrl : "",
             date: moment(Date.now()).format("YYYY-MM-DD HH:MM:SS"),
-          });
+          }, {
+    withCredentials: true,
+  });
       navigate("/");
     } catch (err) {
       console.log(err);
